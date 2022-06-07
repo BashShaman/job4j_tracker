@@ -21,11 +21,10 @@ public class Library {
         }
         System.out.println("-------------------------------------------------");
         for (Book book : books) {
-            if (!book.getTitle().equals("Clean Code")) {
-                continue;
+            if ("Clean Code".equals(book.getTitle())) {
+                System.out.printf("Title: %s, number of pages: %d.\n",
+                        book.getTitle(), book.getNumberOfPages());
             }
-            System.out.printf("Title: %s, number of pages: %d.\n",
-                    book.getTitle(), book.getNumberOfPages());
         }
     }
 }
