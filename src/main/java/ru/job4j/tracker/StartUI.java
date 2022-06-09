@@ -10,9 +10,13 @@ public class StartUI {
             showMenu();
             System.out.print("Select: ");
             int select = Integer.parseInt(scanner.nextLine());
-            if (select != 6) {
-                System.out.printf("The user has chosen: %d.\n", select);
-            } else {
+            if (select == 0) {
+                System.out.println("=== Adding an item ===");
+                System.out.print("Enter a name: ");
+                Item item = new Item(scanner.nextLine());
+                tracker.add(item);
+                System.out.printf("The added item: %s.\n", item);
+            } else if (select == 6) {
                 run = false;
             }
         }
