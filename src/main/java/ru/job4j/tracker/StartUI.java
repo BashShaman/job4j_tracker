@@ -16,6 +16,16 @@ public class StartUI {
                 Item item = new Item(scanner.nextLine());
                 tracker.add(item);
                 System.out.printf("The added item: %s.\n", item);
+            } else if (select == 1) {
+                System.out.println("=== Listing all items ===");
+                Item[] items = tracker.findAll();
+                if (items.length > 0) {
+                    for (Item item : items) {
+                        System.out.println(item);
+                    }
+                } else {
+                    System.out.println("The storage has no items yet.");
+                }
             } else if (select == 6) {
                 run = false;
             }
