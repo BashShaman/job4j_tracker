@@ -49,7 +49,8 @@ public class StartUI {
                     System.out.println("The operation is successful.");
                 } else {
                     System.out.print("The operation failed. ");
-                    System.out.printf("There's NO item with the ID=%d.\n", id);
+                    System.out.printf("There's NO item with the ID=%d.%s", id,
+                            System.lineSeparator());
                 }
             } else if (select == 4) {
                 System.out.println("=== Finding an item by ID ===");
