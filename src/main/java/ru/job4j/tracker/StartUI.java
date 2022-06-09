@@ -26,6 +26,19 @@ public class StartUI {
                 } else {
                     System.out.println("The storage has no items yet.");
                 }
+            } else if (select == 2) {
+                System.out.println("=== Editing an item ===");
+                System.out.print("Enter the ID to find: ");
+                int id = Integer.parseInt(scanner.nextLine());
+                System.out.print("Enter the name to set: ");
+                String name = scanner.nextLine();
+                Item item = new Item(name);
+                if (tracker.replace(id, item)) {
+                    System.out.println("The operation is successful.");
+                } else {
+                    System.out.print("The operation failed. ");
+                    System.out.printf("There's NO item with the ID=%d.\n", id);
+                }
             } else if (select == 6) {
                 run = false;
             }
