@@ -39,6 +39,16 @@ public class StartUI {
                     System.out.print("The operation failed. ");
                     System.out.printf("There's NO item with the ID=%d.\n", id);
                 }
+            } else if (select == 3) {
+                System.out.println("=== Deleting an item ===");
+                System.out.print("Enter the ID of the item: ");
+                int id = Integer.parseInt(scanner.nextLine());
+                if (tracker.delete(id)) {
+                    System.out.println("The operation is successful.");
+                } else {
+                    System.out.print("The operation failed. ");
+                    System.out.printf("There's NO item with the ID=%d.\n", id);
+                }
             } else if (select == 6) {
                 run = false;
             }
