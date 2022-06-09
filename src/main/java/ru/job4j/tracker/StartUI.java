@@ -74,8 +74,8 @@ public class StartUI {
                         System.out.println(item);
                     }
                 } else {
-                    System.out.printf("There are no items with the name=%s.\n",
-                           name);
+                    System.out.printf("There are no items with the name=%s.%s",
+                           name, System.lineSeparator());
                 }
             } else if (select == 6) {
                 run = false;
