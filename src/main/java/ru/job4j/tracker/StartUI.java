@@ -60,6 +60,19 @@ public class StartUI {
                     System.out.print("The operation failed. ");
                     System.out.printf("There's NO item with the ID=%d.\n", id);
                 }
+            } else if (select == 5) {
+                System.out.println("=== Listing items by name ===");
+                System.out.print("Enter the name of the items: ");
+                String name = scanner.nextLine();
+                Item[] items = tracker.findByName(name);
+                if (items.length > 0) {
+                    for (Item item : items) {
+                        System.out.println(item);
+                    }
+                } else {
+                    System.out.printf("There are no items with the name=%s.\n",
+                           name);
+                }
             } else if (select == 6) {
                 run = false;
             }
