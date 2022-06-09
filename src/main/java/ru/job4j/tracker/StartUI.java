@@ -49,6 +49,17 @@ public class StartUI {
                     System.out.print("The operation failed. ");
                     System.out.printf("There's NO item with the ID=%d.\n", id);
                 }
+            } else if (select == 4) {
+                System.out.println("=== Finding an item by ID ===");
+                System.out.print("Enter the ID of the item: ");
+                int id = Integer.parseInt(scanner.nextLine());
+                Item item = tracker.findById(id);
+                if (item != null) {
+                    System.out.println(item);
+                } else {
+                    System.out.print("The operation failed. ");
+                    System.out.printf("There's NO item with the ID=%d.\n", id);
+                }
             } else if (select == 6) {
                 run = false;
             }
