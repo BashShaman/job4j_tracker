@@ -15,7 +15,8 @@ public class StartUI {
                 System.out.print("Enter a name: ");
                 Item item = new Item(scanner.nextLine());
                 tracker.add(item);
-                System.out.printf("The added item: %s.\n", item);
+                System.out.printf("The added item: %s.%s", item,
+                        System.lineSeparator());
             } else if (select == 1) {
                 System.out.println("=== Listing all items ===");
                 Item[] items = tracker.findAll();
