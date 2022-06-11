@@ -31,4 +31,30 @@ public class StartUITest {
         };
         assertArrayEquals(answers, result);
     }
+
+    @Test
+    public void whenEditItem() {
+        Tracker tracker = new Tracker();
+        Item item = new Item("unedited item");
+        tracker.add(item);
+        String name = "edited item";
+        String[] answers = {
+                String.valueOf(item.getId()),
+                name
+        };
+        StartUI.editItem(new StubInput(answers), tracker);
+        Item editedItem = tracker.findById(item.getId());
+        assertEquals(name, editedItem.getName());
+    }
+
+    @Test
+    public void whenDeleteItem() {
+        Tracker tracker = new Tracker();
+        Item item = new Item("to be deleted");
+        tracker.add(item);
+        String[] messages = {String.valueOf(item.getId())};
+        StartUI.deleteItem(new StubInput(messages), tracker);
+        Item foundItem = tracker.findById(item.getId());
+        assertNull(foundItem);
+    }
 }
